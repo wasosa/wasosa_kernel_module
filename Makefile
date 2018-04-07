@@ -12,6 +12,7 @@ clean:
 $(NAME).ko: build
 
 check: $(NAME).ko
+	sudo rmmod $(NAME).ko || true
 	sudo dmesg -C
 	sudo insmod $(NAME).ko
 	sudo rmmod $(NAME).ko
